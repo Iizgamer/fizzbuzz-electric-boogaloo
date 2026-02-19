@@ -1,6 +1,23 @@
 // TODO: Define constants for the form and the result display area
+const numSubmission = document.getElementById('number').value;
+const results = document.getElementById('result');
+const submitButton = document.getElementById('submit');
 
 // TODO: Add the first line of the event listener to handle form submission
+submitButton.addEventListener('submit', handleSubmission());
+
+function handleSubmission() {
+    num = Number(numSubmission)
+    if (num % 3 == 0 && num % 5 == 0) {
+        results.innerHTML = 'FizzBuzz'
+    } else if (num % 3 == 0) {
+        results.innerHTML = 'Fizz'
+    } else if (num % 5 == 0) {
+        results.innerHTML = 'Buzz'
+    } else {
+        results.innerHTML = numSubmission
+    }
+}
 
     // Prevent the form from refreshing the page
     event.preventDefault();
